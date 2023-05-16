@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+
+    h1=title 
+
+    form(method="POST" action="")
+        p Do you want to delete #[strong #{product.name}]
+        button.btn.btn-primary(type='submit') Delete           
+
+
+    if errors 
+        ul 
+            for error in errors 
+                li!= error.msg

@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+
+    h1=title 
+
+    if allProduct 
+        p Delete the following product using the category #{category.name} before deleting the category 
+        ul 
+            each product in allProduct 
+                li 
+                    a(href=product.url) #{product.name}
+
+    else                
+        form(method="POST" action="")
+            p Do you want to delete #[strong #{category.name}]
+            button.btn.btn-primary(type='submit') Delete           
+
+
+    if errors 
+        ul 
+            for error in errors 
+                li!= error.msg
