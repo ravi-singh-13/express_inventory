@@ -2,7 +2,7 @@ const Product = require("../models/product");
 const Category = require("../models/category")
 const asyncHandler = require("express-async-handler");
 const { body, validationResult} = require("express-validator");
-const { findByIdAndRemove } = require("../models/Product");
+const { findByIdAndRemove } = require("../models/product");
 
 exports.index = asyncHandler(async (req, res, next) => {
    const [categories, products] = await Promise.all([
